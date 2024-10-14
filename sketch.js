@@ -24,10 +24,20 @@ DEVICE Gyroscope by remarkability https://editor.p5js.org/remarkability/sketches
 // let selfTone = 2093;
 
 let betweenConversation = 5000; 
-
+let byebye = []
 function preload() {
    heart = loadImage('./assets/heart.gif');
    heartGoal = loadImage('./assets/heart-goal.gif');
+   byebye[0] = loadSound('assets/byebye1.mp3');
+   byebye[1] = loadSound('./assets/byebye2.mp3');
+   byebye[2] = loadSound('./assets/byebye3.mp3');
+}
+
+
+function sayBye()
+{
+  let temp = random(byebye)
+  temp.play()
 }
 
 function setup() {
@@ -139,6 +149,7 @@ function resetPet()
   
   talkOffset = 0;
   convoDuration = 0;
+  sayBye()
   lastUnstableTime = millis()
   loopStartTime = millis()
 }
