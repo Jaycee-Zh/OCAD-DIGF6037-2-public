@@ -3,31 +3,45 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Peaches</title>
-<link rel="stylesheet" type="text/css" href="style.css">
+<title>Nala</title>
+<link rel="stylesheet" href="https://use.typekit.net/enp4mpc.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.min.js" integrity="sha512-lvddmeF7aHRJwdbJeYThWd5kWSjTrXBzCRF/jYROiHzmhMJ1dEXfGH5Q7ft0yhizXTopAETG03s5ajTflauijA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/addons/p5.sound.min.js" integrity="sha512-WzkwpdWEMAY/W8WvP9KS2/VI6zkgejR4/KTxTl4qHx0utqeyVE0JY+S1DlMuxDChC7x0oXtk/ESji6a0lP/Tdg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<body>
-<script> // character settings
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/addons/p5.sound.min.js" integrity="sha512-WzkwpdWEMAY/W8WvP9KS2/VI6zkgejR4/KTxTl4qHx0utqeyVE0JY+S1DlMuxDChC7x0oXtk/ESji6a0lP/Tdg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><body><script> // character settings
 
     const
         petName = "Nala",
         petID = 8,
-        faceColour = [252,231,233],
-        eyeSeed = -2,
-        blinkSpeed = 3,
-        blinkSeed = -1,
-        eyeColour = [4,28,6],
-        eyeShadeColour = [183,180,214],
-        mouthSeed = 0,
-        talkativeLevel = -4;
+        faceColour = [233,234,231],
+        eyeSeed = -3,
+        blinkSpeed = -1,
+        blinkSeed = -4,
+        eyeColour = [24,13,16],
+        eyeShadeColour = [188,179,171],
+        mouthSeed = 2,
+        conversationLengthSeed = 2,
+        pitchSeed = 1;
+        //Conversation personality
+        //The main pitch of this pet when they are in a conversation
+        let ConversationMainPitch = 250;
+        //the randomized pitch difference  final piitch will be MainPitch + random(-var, var) 
+        let ConversationPitchVariation = 2000;  
+        //How fast the pet talks, in milliseconds
+        let ConversationMainSpeed = 37 ;
+        //the randomized speed difference
+        let ConversationSpeedVariation = 12;
+        // this is a randomed time reduced from the talk time, so it creates a little gap between two talks, the final talk time will be 
+        //2000(default talk time in milliseconds) - random(0, 500)(default is 500) = the conversation will last 2000~1500 milliseconds
+        let ConversationTimeVariation = 350;
+        let defaultPatient = 1;
+        let patient = defaultPatient;
+        let selfTone = 2093;
     
-</script><script>const pitches = ["C5","D5","E5","F5","G5","A5","B5","C6","D6","E6","F6","G6"];
-  // rules  # to discuss
-  const rewardForNewPet = 10, 
-  rewardForHuman = Math.round(Math.random()*15) - 7,
-  rewardForConversation = 5; 
-  const goal = 60;</script><script>let 
+</script><script>//- const pitches = ["C5","D5","E5","F5","G5","A5","B5","C6","D6","E6","F6","G6"];
+//- rules  # to discuss
+const rewardForNewPet = 10, 
+rewardForHuman = Math.round(Math.random()*15) - 7,
+rewardForConversation = 5; 
+const goal = 60;</script><script>let 
   windowHeight = window.innerHeight, windowWidth = window.innerWidth;
 let 
   eyeSize = windowHeight * 0.4 + eyeSeed * 5,
@@ -62,13 +76,17 @@ let direction = 1;
 let pointRecordForPets=new Array(12).fill(0),
   pointRecordForHuman=0,
   points=5;
-  let petStatus;</script>                       <!-- inject:js -->
+  let petStatus;
+</script>                       <!-- inject:js -->
 <script src="./awards.js"></script>
-<script src="./draw.js"></script>
+<script src="./basic-selfie.js"></script>
+<script src="./conversation.js"></script>
 <script src="./expressions.js"></script>
-<script src="./expression_triggers.js"></script>
+<script src="./gyro.js"></script>
+<script src="./listen.js"></script>
 <script src="./pitch.js"></script>
+<script src="./selfie.js"></script>
 <script src="./status.js"></script>
-<!-- endinject --><script src="sketch.js"></script>
-</body>
+<script src="./talk.js"></script>
+<!-- endinject --><script src="sketch.js"></script></body></body>
 </html>

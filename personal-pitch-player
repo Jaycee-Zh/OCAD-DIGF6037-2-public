@@ -1,0 +1,99 @@
+//This is the pitch player for our personal mobile use, to play for the humans to be able to try and match to the phones with their voice.
+//To use, press one of the buttons to play a sound, then press again to stop the sound.
+//Make sure phone is not on silent!
+
+// referenced for stop/start toggle related to sound media:
+// https://p5js.org/reference/p5.MediaElement/stop/
+
+let sound1;
+let sound2;
+let sound3;
+
+//swap these out with whatever frequencies we end up using
+let sound1freq = 1109;
+let sound2freq = 1480;
+let sound3freq = 784;
+
+let button1;
+let button2;
+let button3;
+
+let soundStopped1 = true;
+let soundStopped2 = true;
+let soundStopped3 = true;
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+
+//Each sound set to a sine oscillator so as to set a certain frequency (Based on how Harry created the "talking" functions), then setting the amp to be higher so everyone can hear
+  sound1 = new p5.Oscillator("sine");
+  sound1.freq(sound1freq);
+  sound1.amp(0.8);
+
+  sound2 = new p5.Oscillator("sine");
+  sound2.freq(sound2freq);
+  sound2.amp(0.8);
+
+  sound3 = new p5.Oscillator("sine");
+  sound3.freq(sound3freq);
+  sound3.amp(0.8);
+
+//Creating buttons, set each to go to their sound toggle function when touchEnded. Each has the same style formatting to make them differently coloured circles
+  button1 = createButton("1");
+  button1.touchEnded(toggle1);
+  button1.position(100, 50);
+  button1.style('border-radius', '40px');
+  button1.style("width", "70px");
+  button1.style("height", "70px");
+  button1.style("background-color", "lightgreen");
+
+  button2 = createButton("2");
+  button2.touchEnded(toggle2);
+  button2.position(100, 200);
+  button2.style('border-radius', '40px');
+  button2.style("width", "70px");
+  button2.style("height", "70px");
+  button2.style("background-color", "pink");
+
+  button3 = createButton("3");
+  button3.touchEnded(toggle3);
+  button3.position(100, 350);
+  button3.style('border-radius', '40px');
+  button3.style("width", "70px");
+  button3.style("height", "70px");
+  button3.style("background-color", "lightyellow");
+}
+
+function draw() {
+  background("lightblue");
+}
+
+// For each of the toggles, these work by checking if the sound being stopped is true/false, then plays it and sets that it is not stopped if the button is pressed, or turns sound off if the button is pressed when the sound is already playing.
+function toggle1() {
+  if (soundStopped1 === true) {
+    sound1.start();
+    soundStopped1 = false;
+  } else {
+    sound1.stop();
+    soundStopped1 = true;
+  }
+}
+
+function toggle2() {
+  if (soundStopped2 === true) {
+    sound2.start();
+    soundStopped2 = false;
+  } else {
+    sound2.stop();
+    soundStopped2 = true;
+  }
+}
+function toggle3() {
+  if (soundStopped3 === true) {
+    sound3.start();
+    soundStopped3 = false;
+  } else {
+    sound3.stop();
+    soundStopped3 = true;
+  }
+}

@@ -1,80 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Milo</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.min.js"
-        integrity="sha512-lvddmeF7aHRJwdbJeYThWd5kWSjTrXBzCRF/jYROiHzmhMJ1dEXfGH5Q7ft0yhizXTopAETG03s5ajTflauijA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/addons/p5.sound.min.js"
-        integrity="sha512-WzkwpdWEMAY/W8WvP9KS2/VI6zkgejR4/KTxTl4qHx0utqeyVE0JY+S1DlMuxDChC7x0oXtk/ESji6a0lP/Tdg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-</head>
-<!--This file is for test-->
-
-<body>
-    <script>
-        const
-            petName = "Milo",
-            petID = 0,
-            faceColour = [252, 234, 254],
-            eyeSeed = 2,
-            blinkSpeed = 3,
-            blinkSeed = 4,
-            eyeColour = [25, 58, 24],
-            eyeShadeColour = [160, 148, 124],
-            mouthSeed = 3,
-            // outPitch = "", 
-            talkativeLevel = 2;
-        // const pitches = ["C5","D5","E5","F5","G5","A5","B5","C6","D6","E6","F6","G6"];
-        // rules  # to discuss
-        const rewardForNewPet = 10, 
-        rewardForHuman = Math.round(Math.random()*15) - 7,
-        rewardForConversation = 5; 
-        const goal = 60;
-    </script>
-    <script>
-        let windowHeight = window.innerHeight, windowWidth = window.innerWidth;
-        let eyeSize = windowHeight * 0.4 + eyeSeed * 5,
-            margin = windowWidth * 0.1 + eyeSize / 2,
-            leftEyeX = margin,
-            leftEyeY = windowHeight * 0.45,
-            rightEyeX = windowWidth - margin,
-            rightEyeY = leftEyeY,
-            ballSize = eyeSize * 0.8, eyeLineWidth = 4 + 1 * eyeSeed,
-            blinkPause = 250 + 10 * blinkSeed,
-            eyeLidWidth = eyeSize + eyeLineWidth * 2,
-            eyeLidHeight = eyeSize * 0.6,
-            eyeLidTopOpenPosY = -eyeLidHeight * 2,
-            eyeLidBottomOpenPosY = eyeLidHeight,
-            eyeLidTopClosePosY = -eyeLidHeight,
-            eyeLidBottomClosePosY = 0,
-            mouthWidth = windowWidth * 0.2 + mouthSeed * 5,
-            mouthThickness = mouthSeed * 2
-            mouthInitialHeight = 2 + mouthSeed * 1,
-            mouthPause = 20 + mouthSeed * 3,
-            eyeMovePause = 60;
-        let mouthTimer = mouthPause,
-            blinkTimer = blinkPause,
-            eyeLidTopPosY = eyeLidTopOpenPosY,
-            eyeLidBottomPosY = eyeLidBottomOpenPosY,
-            mouthHeight = mouthInitialHeight,
-            eyeMoveTimer = eyeMovePause,
-            eyeMoveRange = 1;
-        let direction = 1;     
-        let pointRecordForPets=new Array(12).fill(0),
-        pointRecordForHuman=0,
-        points=5;
-        let petStatus = "counting";
-            
-    </script>
-    <script src="_awards.js"></script>
-    <script src="_status.js"></script>
-    <script src="_expressions.js"></script>
-    <script src="sketch.js"></script>
-</body>
-
-</html>
+<html><head><style>body{
+  text-align: center;
+  width: 100%;
+  margin:0;
+  display: flex; 
+  flex-flow: column; 
+  justify-content:center;
+  align-items:center;     
+}
+h1{
+  margin-top: 1em
+}
+.pets{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  padding:0;
+  width: 80%
+}
+.pets li{
+  list-style: none;
+  padding: 2rem
+}
+.pets li a {
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+  background-color: gray;
+  padding: 0.5em 1em;
+  border-radius:2em;
+}
+.pets li a:hover{
+  background-color: rgb(18,12,0);
+}</style></head><body><h1>Welcome to Pet Networking Project</h1><p>Choose a pet below and let it start to talk with others.</p><ul class="pets">     <li><a class="pet" href="1.html">Milo</a></li><li><a class="pet" href="2.html">Bella</a></li><li><a class="pet" href="3.html">Luna</a></li><li><a class="pet" href="4.html">Toby</a></li><li><a class="pet" href="5.html">Pip</a></li><li><a class="pet" href="6.html">Zoe</a></li><li><a class="pet" href="7.html">Coco</a></li><li><a class="pet" href="8.html">Ollie</a></li><li><a class="pet" href="9.html">Nala</a></li><li><a class="pet" href="10.html">Peaches</a></li><li><a class="pet" href="11.html">Finn</a></li><li><a class="pet" href="12.html">Willow</a></li></ul></body></html>
