@@ -43,6 +43,7 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   angleMode(DEGREES)
+  angleMode(DEGREES)
   // default settings
   noStroke();
   noFill();
@@ -200,6 +201,22 @@ function resetPet()
 //  the pet will be mad and do something accordingly. then the pet will do a reset()
 function draw() {
   background(faceColour);
+  updateGyroscopeData()
+  checkTalkTime()
+  updateConversation()
+  // fill(0)
+  // stroke(8)
+
+  
+  // text("Stable:" + str(isStable), 0, 50)
+  // text("Paired:" + str(pairingSuccess), 0, 100)
+  // text("TalkStartTime：" + str(talkStartTime), 0, 150)
+  // text("Identified Countr：" + str(identifiedCounter), 0, 200)
+  // text("Identified self: " + str(selfIdentified), 0, 250)
+  // text("Counter Frequency：" + str(matchedPet), 0, 300)
+  // text("Patient:" + str(patient), 0, 350)
+  // text(str(talkOffset), 0, 400)
+  // text("Total Rot:" + str(totalRot), 0, 450)
   updateGyroscopeData()
   checkTalkTime()
   updateConversation()
