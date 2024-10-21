@@ -16,6 +16,9 @@ function updatePoints(){
 
 
 // change the status based on the points
+
+
+// change the status based on the points
 function checkPoints(){
 if(points>=goal){
     petStatus = "win";
