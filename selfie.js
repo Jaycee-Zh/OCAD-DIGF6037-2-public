@@ -3,11 +3,11 @@
 // Used this example as a reference for how to save still images from a video and display them. This example was used more in an animation context so I changed it so rather than appearing as one-at-a-time image frames, it can display each still image onto the page as the photos are taken.
 
 // let liveCamera; // video capture
-let selfieCapture = []; //array to hold images in
-let takePhotoButton; // button to take photos
+// let selfieCapture = []; //array to hold images in
+// let takePhotoButton; // button to take photos
 
-let cameraWidth = 320;
-let cameraHeight = 240;
+// let cameraWidth = 320;
+// let cameraHeight = 240;
 
 
 function takeSelfie() {

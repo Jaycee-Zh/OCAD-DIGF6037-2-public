@@ -4,6 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Milo</title>
+<link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://use.typekit.net/enp4mpc.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.min.js" integrity="sha512-lvddmeF7aHRJwdbJeYThWd5kWSjTrXBzCRF/jYROiHzmhMJ1dEXfGH5Q7ft0yhizXTopAETG03s5ajTflauijA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/addons/p5.sound.min.js" integrity="sha512-WzkwpdWEMAY/W8WvP9KS2/VI6zkgejR4/KTxTl4qHx0utqeyVE0JY+S1DlMuxDChC7x0oXtk/ESji6a0lP/Tdg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><body><script> // character settings
@@ -11,28 +12,28 @@
     const
         petName = "Milo",
         petID = 0,
-        faceColour = [248,231,232],
-        eyeSeed = 0,
-        blinkSpeed = 2,
-        blinkSeed = -3,
-        eyeColour = [25,9,20],
-        eyeShadeColour = [204,197,210],
-        mouthSeed = 2,
-        conversationLengthSeed = -1,
-        pitchSeed = 0;
+        faceColour = [251,245,242],
+        eyeSeed = 3,
+        blinkSpeed = -3,
+        blinkSeed = 1,
+        eyeColour = [27,6,27],
+        eyeShadeColour = [196,213,210],
+        mouthSeed = -2,
+        conversationLengthSeed = -2,
+        pitchSeed = -2;
         //Conversation personality
         //The main pitch of this pet when they are in a conversation
         let ConversationMainPitch = 750;
         //the randomized pitch difference  final piitch will be MainPitch + random(-var, var) 
-        let ConversationPitchVariation = -500;  
+        let ConversationPitchVariation = -2000;  
         //How fast the pet talks, in milliseconds
-        let ConversationMainSpeed = 43 ;
+        let ConversationMainSpeed = 61 ;
         //the randomized speed difference
-        let ConversationSpeedVariation = 16;
+        let ConversationSpeedVariation = 18;
         // this is a randomed time reduced from the talk time, so it creates a little gap between two talks, the final talk time will be 
         //2000(default talk time in milliseconds) - random(0, 500)(default is 500) = the conversation will last 2000~1500 milliseconds
-        let ConversationTimeVariation = 150;
-        let defaultPatient = 5;
+        let ConversationTimeVariation = 400;
+        let defaultPatient = 2;
         let patient = defaultPatient;
         let selfTone = 1109;
     
@@ -76,13 +77,13 @@ let direction = 1;
 let pointRecordForPets=new Array(12).fill(0),
   pointRecordForHuman=0,
   points=5;
-  let petStatus;
-</script>                       <!-- inject:js -->
-  let petStatus;
+let petStatus;
 </script>                       <!-- inject:js -->
 <script src="./awards.js"></script>
 <script src="./basic-selfie.js"></script>
 <script src="./conversation.js"></script>
+<script src="./draw.js"></script>
+<script src="./expression_triggers.js"></script>
 <script src="./expressions.js"></script>
 <script src="./gyro.js"></script>
 <script src="./listen.js"></script>
