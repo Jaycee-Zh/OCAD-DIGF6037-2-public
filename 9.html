@@ -12,33 +12,32 @@
     const
         petName = "Nala",
         petID = 8,
-        faceColour = [239,236,245],
-        eyeSeed = 4,
-        blinkSpeed = -3,
-        blinkSeed = 2,
-        eyeColour = [18,12,10],
-        eyeShadeColour = [197,186,211],
-        mouthSeed = -2,
+        faceColour = [234,244,241],
+        eyeSeed = -4,
+        blinkSpeed = 4,
+        blinkSeed = -4,
+        eyeColour = [19,14,16],
+        eyeShadeColour = [194,201,200],
+        mouthSeed = -1,
         conversationLengthSeed = 0,
-        pitchSeed = -3;
+        pitchSeed = 1;
         //Conversation personality
         //The main pitch of this pet when they are in a conversation
-        let ConversationMainPitch = 550;
+        let ConversationMainPitch = 250;
         //the randomized pitch difference  final piitch will be MainPitch + random(-var, var) 
         let ConversationPitchVariation = 500;  
         //How fast the pet talks, in milliseconds
-        let ConversationMainSpeed = 79 ;
+        let ConversationMainSpeed = 43 ;
         //the randomized speed difference
-        let ConversationSpeedVariation = 12;
+        let ConversationSpeedVariation = 18;
         // this is a randomed time reduced from the talk time, so it creates a little gap between two talks, the final talk time will be 
         //2000(default talk time in milliseconds) - random(0, 500)(default is 500) = the conversation will last 2000~1500 milliseconds
-        let ConversationTimeVariation = 100;
-        let defaultPatient = 5;
+        let ConversationTimeVariation = 350;
+        let defaultPatient = 4;
         let patient = defaultPatient;
         let selfTone = 2093;
     
-</script><script>//- const pitches = ["C5","D5","E5","F5","G5","A5","B5","C6","D6","E6","F6","G6"];
-//- rules  # to discuss
+</script><script>//- rules 
 const rewardForNewPet = 10, 
 rewardForHuman = Math.round(Math.random()*15) - 7,
 rewardForConversation = 5; 
@@ -85,7 +84,6 @@ let petStatus;
 <script src="./expressions.js"></script>
 <script src="./gyro.js"></script>
 <script src="./listen.js"></script>
-<script src="./pitch.js"></script>
 <script src="./selfie.js"></script>
 <script src="./status.js"></script>
 <script src="./talk.js"></script>

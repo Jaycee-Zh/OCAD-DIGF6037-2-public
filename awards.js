@@ -24,11 +24,7 @@ if(points>=goal){
     petStatus = "win";
 }else if (points<=0){
     petStatus = "sad";
-    petStatus = "win";
-}else if (points<=0){
-    petStatus = "sad";
 }else{
-    petStatus = "counting"
     petStatus = "counting"
 }
 }

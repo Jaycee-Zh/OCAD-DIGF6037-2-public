@@ -23,8 +23,6 @@ function drawStatus() {
         case "win":
             heart.setFrame(9);
             image(heart, heartX, heartY, heartSize, heartSize);
-            heart.setFrame(9);
-            image(heart, heartX, heartY, heartSize, heartSize);
             text("I am sooo HAPPY!", windowWidth / 2, 60);
             break;
         case "sad":
@@ -37,19 +35,7 @@ function drawStatus() {
             image(heart, heartX, heartY, heartSize, heartSize);
             fill(255);
             textSize(14);
-            text(points, heartX + heartSize / 2 - 4, heartY + heartSize / 2 + 7);
-        case "sad":
-            heart.setFrame(0);
-            image(heart, heartX, heartY, heartSize, heartSize);
-            text("Oh, it's nothing...but my broken heart.", leftEyeX + heartSize / 2, 60);
-            break;
-        case "counting":
-            heart.setFrame(constrain(1 + Math.floor(points / 60 * 8), 1, 8));
-            image(heart, heartX, heartY, heartSize, heartSize);
-            fill(255);
-            textSize(14);
-            text(points, heartX + heartSize / 2 - 4, heartY + heartSize / 2 + 7);
-            break;
+            text(points, heartX + heartSize / 2 - 4, heartY + heartSize / 2 + 7);       
         default:
             heart.setFrame(constrain(1 + Math.floor(points / 60 * 8), 1, 8));
             image(heart, heartX, heartY, heartSize, heartSize);
