@@ -26,7 +26,7 @@ DEVICE Gyroscope by remarkability https://editor.p5js.org/remarkability/sketches
 let betweenConversation = 5000; 
 
 //bye bye function, allow pet to say byebye at the end of converstaion, giving both human and pet a clear cue on when the conversation ended
-let byebye = []
+let byebye = [1,2,3]
 function sayBye()
 {
   //get a random byebye( there's three in total)
@@ -38,6 +38,9 @@ function sayBye()
 function preload() {
    heart = loadImage('./assets/heart.gif');
    heartGoal = loadImage('./assets/heart-goal.gif');
+   byebye[0] = loadSound('./assets/byebye1.mp3');
+   byebye[1] = loadSound('./assets/byebye2.mp3');
+   byebye[2] = loadSound('./assets/byebye3.mp3');
 }
 //setup function
 function setup() {
@@ -199,45 +202,13 @@ function resetPet()
 //isStable == false, pairedSuccess == true
 //  this means the pet has a working connection but is taken away by someone in the middle of the conversation
 //  the pet will be mad and do something accordingly. then the pet will do a reset()
+
 function draw() {
   background(faceColour);
   updateGyroscopeData()
   checkTalkTime()
   updateConversation()
-  // fill(0)
-  // stroke(8)
-
-  
-  // text("Stable:" + str(isStable), 0, 50)
-  // text("Paired:" + str(pairingSuccess), 0, 100)
-  // text("TalkStartTime：" + str(talkStartTime), 0, 150)
-  // text("Identified Countr：" + str(identifiedCounter), 0, 200)
-  // text("Identified self: " + str(selfIdentified), 0, 250)
-  // text("Counter Frequency：" + str(matchedPet), 0, 300)
-  // text("Patient:" + str(patient), 0, 350)
-  // text(str(talkOffset), 0, 400)
-  // text("Total Rot:" + str(totalRot), 0, 450)
-  updateGyroscopeData()
-  checkTalkTime()
-  updateConversation()
-  // fill(0)
-  // stroke(8)
-
-  
-  // text("Stable:" + str(isStable), 0, 50)
-  // text("Paired:" + str(pairingSuccess), 0, 100)
-  // text("TalkStartTime：" + str(talkStartTime), 0, 150)
-  // text("Identified Countr：" + str(identifiedCounter), 0, 200)
-  // text("Identified self: " + str(selfIdentified), 0, 250)
-  // text("Counter Frequency：" + str(matchedPet), 0, 300)
-  // text("Patient:" + str(patient), 0, 350)
-  // text(str(talkOffset), 0, 400)
-  // text("Total Rot:" + str(totalRot), 0, 450)
-  // for test
-  // isStable = false; pairingSuccess = false;
-
-  // debug
-  // console.log(isStable+" "+pairingSuccess+" "+convoTimeLeft+" "+patient)
+ 
 
   if (isStable == false && pairingSuccess == false)
     //Not paired and not stable // for when moving, the conversation ended successfully
