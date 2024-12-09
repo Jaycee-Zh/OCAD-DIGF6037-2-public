@@ -3,36 +3,36 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nala</title>
+<title>Teddy</title>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://use.typekit.net/enp4mpc.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.min.js" integrity="sha512-lvddmeF7aHRJwdbJeYThWd5kWSjTrXBzCRF/jYROiHzmhMJ1dEXfGH5Q7ft0yhizXTopAETG03s5ajTflauijA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/addons/p5.sound.min.js" integrity="sha512-WzkwpdWEMAY/W8WvP9KS2/VI6zkgejR4/KTxTl4qHx0utqeyVE0JY+S1DlMuxDChC7x0oXtk/ESji6a0lP/Tdg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><body><script> // character settings
 
     const
-        petName = "Nala",
+        petName = "Teddy",
         petID = 8,
-        faceColour = [234,244,241],
-        eyeSeed = -4,
+        faceColour = [247,250,233],
+        eyeSeed = -1,
         blinkSpeed = 4,
-        blinkSeed = -4,
-        eyeColour = [19,14,16],
-        eyeShadeColour = [194,201,200],
-        mouthSeed = -1,
-        conversationLengthSeed = 0,
+        blinkSeed = 3,
+        eyeColour = [29,20,23],
+        eyeShadeColour = [172,171,192],
+        mouthSeed = -3,
+        conversationLengthSeed = -3,
         pitchSeed = 1;
         //Conversation personality
         //The main pitch of this pet when they are in a conversation
-        let ConversationMainPitch = 250;
+        let ConversationMainPitch = 50;
         //the randomized pitch difference  final piitch will be MainPitch + random(-var, var) 
-        let ConversationPitchVariation = 500;  
+        let ConversationPitchVariation = 1500;  
         //How fast the pet talks, in milliseconds
-        let ConversationMainSpeed = 43 ;
+        let ConversationMainSpeed = 37 ;
         //the randomized speed difference
-        let ConversationSpeedVariation = 18;
+        let ConversationSpeedVariation = 16;
         // this is a randomed time reduced from the talk time, so it creates a little gap between two talks, the final talk time will be 
         //2000(default talk time in milliseconds) - random(0, 500)(default is 500) = the conversation will last 2000~1500 milliseconds
-        let ConversationTimeVariation = 350;
+        let ConversationTimeVariation = 450;
         let defaultPatient = 4;
         let patient = defaultPatient;
         let selfTone = 2093;
