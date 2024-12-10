@@ -1,9 +1,11 @@
-const videoSize = [1920,1080];
+// const videoSize = [1600,900];
+const videoSize = [1520,840];
 const resolution = 40;
 
 function setup() {
   createCanvas(videoSize[0], videoSize[1]);
-  video= createCapture(VIDEO, { flipped: true });
+  video= createCapture(VIDEO);
+  // video= createCapture(VIDEO, { flipped: true });
   video.size(videoSize[0], videoSize[1]);
   video.hide();
 
@@ -21,7 +23,7 @@ function setup() {
 }
 
 function draw() {
-  background(220);
+  background(255);
   colorMode(RGB,255);
   noStroke();
 
@@ -45,6 +47,6 @@ function draw() {
     stroke(255);
     strokeWeight(4);
     // text("Human "+humanId, videoSize[0]/2-resolution*10, videoSize[1] - resolution*4 )
-    text("Human "+humanId, videoSize[1]/2, -resolution*2 )
+    text("Human "+humanId, videoSize[1]/2, -videoSize[0]+resolution*4 )
     pop();
 }
