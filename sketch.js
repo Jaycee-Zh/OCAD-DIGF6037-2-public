@@ -304,7 +304,7 @@ function draw() {
           {
             //if no patient then we disconnect
             updatePoints();
-          talk(1,talkTime)
+          // talk(1,talkTime)
           talkStartTime = millis()
           talkedInThisBlock = true;
           resetPet()
